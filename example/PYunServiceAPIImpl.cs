@@ -71,6 +71,7 @@ namespace api_demo
             return APIReply<ParkingBilling>.newBuilder()
                 .setResultCode(ResultCode.Success)
                 .setPayload(payload)
+                .setMessage("成功")
                 .Build();
         }
 
@@ -183,6 +184,9 @@ namespace api_demo
         {
             ParkingPayment payment = new ParkingPayment();
             payment.PayType = PYun.API.Reply.ParkingPayment.PAY_TYPE_CASH;
+
+            ParkingDetail detail = new ParkingDetail();
+            detail.PlateColor = ColorType.Blue;
             return base.ParkingDetail(request);
         }
 
