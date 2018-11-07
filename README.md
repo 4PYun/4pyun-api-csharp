@@ -3,7 +3,7 @@ PYunAPI SDK C#
 
 ```
 Build @ 2018-08-21 By D.T.
-Ver 1.1.0.1
+Ver 1.1.0.2
 ```
 
 ### 开发环境
