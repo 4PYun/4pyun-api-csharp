@@ -2,8 +2,8 @@ PYunAPI SDK C#
 ---
 
 ```
-Build @ 2018-08-21 By D.T.
-Ver 1.1.0.2
+Build @ 2019-01-16 By D.T.
+Ver 1.1.0.3
 ```
 
 ### 开发环境
@@ -17,15 +17,11 @@ Ver 1.1.0.2
 
 * 4pyun-api.dll
 
-
-
 ## 用法
 
 ### 1. 实现AbstractServiceAPI
 
 在抽象类`AbstractServiceAPI`中定义类目前所有接口中定义方法的回调函数, 具体接口参数可参考接口文档定义。
-
-
 
 ### 2. 实现ChannelEventHandler
 
@@ -37,8 +33,6 @@ Ver 1.1.0.2
 | `ChannelEventType.AccessDenied`  | API授权失败 |
 | `ChannelEventType.ChannelError`  | TCP连接异常 |
 | `ChannelEventType.ChannelClosed` | TCP链接关闭 |
-
-
 
 ### 3. 创建PYunAPI对象
 
@@ -57,8 +51,6 @@ instance.ChannelEventHandler += new EventHandler<ChannelEventArgs>(ChannelEventH
 instance.ServiceHandler = new PYunServiceAPIImpl();
 ```
 
-
-
 ### 4. 启动服务
 
 ```csharp
@@ -72,8 +64,6 @@ instance.Startup(uuid, mac);
 
 通过调用`Startup`方法底层SDK会开启线程和PYun服务器保持一个TCP长连接, 并支持会自动重连; 连接的状态通过`ChannelEventHandler`中监听处理。
 
-
-
 ### 5. 停止服务
 
 ```csharp
@@ -82,8 +72,6 @@ instance.Shutdown();
 
 通过调用`Shutdown`方法会关闭底层TCP连接线程。
 
-
-
 ### 6. 重启服务
 
 ```
@@ -91,8 +79,6 @@ instance.Restart();
 ```
 
 通过调用`Restart`方法会关闭底层TCP连接线程, 然后重新建立连接, 连接的状态通过`ChannelEventHandler`中监听处理。
-
-
 
 ### 附录
 
