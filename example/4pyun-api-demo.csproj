@@ -104,10 +104,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Libraries\4pyun-api.dll" />
+    <Content Include="Libraries\4pyun-api.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Libraries\log4net.dll" />
     <Content Include="Libraries\Newtonsoft.Json.dll" />
-    <Content Include="log4net.xml" />
+    <Content Include="log4net.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\favicon.ico" />
   </ItemGroup>
   <ItemGroup>
