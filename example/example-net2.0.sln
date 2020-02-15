@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4pyun-api-demo", "4pyun-api-demo.csproj", "{78D3D62D-162D-4BE2-8DF4-40FFF6704E87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "example-net2.0", "example-net2.0.csproj", "{78D3D62D-162D-4BE2-8DF4-40FFF6704E87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
