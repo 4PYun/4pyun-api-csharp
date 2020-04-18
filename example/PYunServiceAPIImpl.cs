@@ -10,6 +10,38 @@ namespace api_demo
 {
     class PYunServiceAPIImpl : AbstractServiceAPI
     {
+        /// <summary>
+        /// 提前拦截请求, 若请求被处理则不会触发其他方法回调
+        /// </summary>
+        /// <param name="serviceName"></param>
+        /// <param name="args"></param>
+        /// <param name="reply"></param>
+        /// <returns>true - 请求已拦截处理完成; false - 请求未处理</returns>
+        public override bool HookRequest(string serviceName, IDictionary<string, string> args, PYun.Protocol.Payload.ExecutePayload reply)
+        {
+            // 对于SDK尚未封装的接口可在这手动拦截实现
+            if ("service.parking.realtime".Equals(serviceName))
+            {
+                // 模拟拦截实时车位
+                // TODO 处理业务逻辑
+                IDictionary<string, string> parameters = new Dictionary<string, string>();
+                parameters["total"] = "1000";
+                parameters["parking"] = "10";
+                parameters["available"] = "900";
+
+
+                // 设置返回结果
+                reply.ResultCode = "1001";
+                reply.Message = "处理成功";
+                reply.Parameters = parameters;
+                // 注意: 拦截处理后返回true表示已经处理过了
+                return true;
+
+            }
+
+            // 其他未处理返回false则SDK会自动处理
+            return false;
+        }
 
         /// <summary>
         /// 查询停车费用
