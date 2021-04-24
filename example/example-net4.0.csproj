@@ -104,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="log4net.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\favicon.ico" />
   </ItemGroup>
